@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { Customer } from '../models/customer';
 import { ParsedHostBindings } from '@angular/compiler';
 import { Reservation } from '../models/reservations';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  url = 'http://localhost:3000/api';
+  url = environment.apiURL + '/api';
 
   constructor(private http: HttpClient) { }
 
