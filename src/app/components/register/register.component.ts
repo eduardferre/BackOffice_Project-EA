@@ -8,25 +8,25 @@ import { Admin } from 'src/app/models/admin';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   admin: Admin | undefined;
-  loginForm: FormGroup;
-  title = "login";
+  registerForm: FormGroup;
+  title = "register";
 
   constructor(private fb: FormBuilder, 
               private router: Router, 
               private toastr: ToastrService,
               private _authService: AuthService,
               private aRouter: ActivatedRoute) { 
-    this.loginForm = this.fb.group({
+    this.registerForm = this.fb.group({
       _id: [],
       adminName: ['', Validators.required],
-      fullName: [''],
-      email: [''],
+      fullName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       creationDate: [],
     });
@@ -34,23 +34,23 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     }
 
-  loginAdmin() {
+  registerAdmin() {
     const admin: Admin = {
-      _id: this.loginForm.get('_id')?.value,
-      adminName: this.loginForm.get('adminName')?.value,
-      fullName: this.loginForm.get('fullName')?.value,
-      email: this.loginForm.get('email')?.value,
-      password: this.loginForm.get('password')?.value,
-      creationDate: this.loginForm.get('creationDate')?.value,
+      _id: this.registerForm.get('_id')?.value,
+      adminName: this.registerForm.get('adminName')?.value,
+      fullName: this.registerForm.get('fullName')?.value,
+      email: this.registerForm.get('email')?.value,
+      password: this.registerForm.get('password')?.value,
+      creationDate: this.registerForm.get('creationDate')?.value,
     }
     
-    this._authService.login(admin).subscribe(res => {
+    this._authService.register(admin).subscribe(res => {
       console.log(res);
       localStorage.setItem('token', res);      
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/']);
     }, error => {
       console.log(error);
-      this.loginForm.reset();
+      this.registerForm.reset();
     })
   }
 }
