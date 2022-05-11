@@ -3,22 +3,22 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Admin } from '../models/admin';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  private URL = 'http://localhost:3000/api';
+  url = environment.apiURL + '/api';
 
   constructor(private http: HttpClient, private router: Router) { }
 
   login(admin: Admin): Observable<string> {
-    return this.http.post(this.URL + '/admins/login', admin, {responseType: 'text'});
+    return this.http.post(this.url + '/admins/login', admin, {responseType: 'text'});
   }
 
   register(admin: Admin): Observable<string> {
-    return this.http.post(this.URL + '/admins/register', admin, {responseType: 'text'});
+    return this.http.post(this.url + '/admins/register', admin, {responseType: 'text'});
   }
 
   getToken() {
@@ -33,6 +33,6 @@ export class AuthService {
   
   logOut(){
     localStorage.removeItem('token');
-    this.router.navigate(['/login'])
+    this.router.navigate(['/'])
   }
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from '../models/customer';
-import { ParsedHostBindings } from '@angular/compiler';
 import { Reservation } from '../models/reservations';
 import { environment } from 'src/environments/environment';
 
