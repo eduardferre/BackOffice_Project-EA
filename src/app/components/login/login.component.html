@@ -4,13 +4,13 @@
             <div class="card">
                 <div class="card-body text-center">
                     <span class="title"> {{ title | uppercase }} </span>
-                    <form class="mt-3" [formGroup]="loginForm" (ngSubmit)="loginCustomer()">
+                    <form class="mt-3" [formGroup]="loginForm" (ngSubmit)="loginAdmin()">
                         <div class="mb-3">
-                            <input type="text" formControlName="email" 
-                                class="form-control form-control-lg" placeholder="Email">
-                            <div class="text-danger"
-                                *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
-                                <span>L'email és obligatori</span>
+                            <input type="text" formControlName="adminName" 
+                                class="form-control form-control-lg" placeholder="Admin Name">
+                                <div class="text-danger"
+                                *ngIf="loginForm.get('adminName')?.hasError('required') && loginForm.get('adminName')?.touched">
+                                <span>Admin Name és obligatori</span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -29,4 +29,7 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container mt-5 text-center"> 
+    <i [routerLink]="['/register']" class="fa-solid fa-pen-to-square text-primary"> Register </i>
 </div>

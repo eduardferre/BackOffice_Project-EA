@@ -1,6 +1,6 @@
 {
   "name": "back-office-project-ea1",
-  "version": "0.0.0",
+  "version": "0.3.1b",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +9,7 @@
     "test": "ng test"
   },
   "private": true,
+  "author": "Grup 2: EA",
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
@@ -42,6 +43,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lite-server": "^2.6.1",
     "typescript": "~4.6.2"
   }
 }

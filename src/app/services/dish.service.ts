@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Dish } from '../models/dish';
 import { DishADD } from '../models/dishADD';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DishService {
-  url = 'http://localhost:3000/api';
+  url = environment.apiURL + '/api';
 
   constructor(private http: HttpClient) { }
 
