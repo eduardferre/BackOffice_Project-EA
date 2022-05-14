@@ -13,8 +13,8 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  login(admin: Admin): Observable<string> {
-    return this.http.post(this.url + '/admins/login', admin, {responseType: 'text'});
+  login(admin: Admin): Observable<Object> {
+    return this.http.post<Object>(this.url + '/admins/login', admin);
   }
 
   register(admin: Admin): Observable<string> {
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   getToken() {
-    const token = localStorage.getItem('token');
+    const token: any = localStorage.getItem('token');
     console.log(token);
     return token;
   }  

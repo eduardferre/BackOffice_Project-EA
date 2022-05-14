@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
       creationDate: this.loginForm.get('creationDate')?.value,
     }
     
-    this._authService.login(admin).subscribe(res => {
+    this._authService.login(admin).subscribe((res: any) => {
+      localStorage.setItem('token', res.token);   
       console.log(res);
-      localStorage.setItem('token', res);      
       this.router.navigate(['/dashboard']);
     }, error => {
       console.log(error);

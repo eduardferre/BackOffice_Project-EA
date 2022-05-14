@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Customer } from '../models/customer';
 import { Reservation } from '../models/reservations';
 import { environment } from 'src/environments/environment';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @Injectable({
   providedIn: 'root'

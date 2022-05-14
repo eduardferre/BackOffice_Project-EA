@@ -61,7 +61,6 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
   ],
   providers: [
-    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

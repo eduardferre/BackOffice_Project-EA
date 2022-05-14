@@ -13,11 +13,13 @@ export class TokenInterceptorService implements HttpInterceptor{
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler){
-    const tokenizeReq = req.clone({
+    const token = localStorage.getItem('token');
+    let tokenizeReq = req.clone({
       setHeaders:{
-        Authorization: `x-access-token ${this.authService.getToken()}`
+        'x-access-token': `${token}`
       }
-    })
+    });
+    console.log(tokenizeReq);
     return next.handle(tokenizeReq);
   }
 }
