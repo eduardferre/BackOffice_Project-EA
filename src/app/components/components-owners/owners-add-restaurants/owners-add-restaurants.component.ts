@@ -18,7 +18,7 @@ export class OwnersAddRestaurantsComponent implements OnInit {
   owner: Owner | undefined;
   restaurant: Restaurant | undefined;
   restaurantForm: FormGroup;
-  title = "Owner Information";
+  title = "Restaurant Information";
   _id: string | null;
   _idrest: string | null;
 
@@ -83,7 +83,7 @@ export class OwnersAddRestaurantsComponent implements OnInit {
       address: this.restaurantForm.get('address')?.value,
       city: this.restaurantForm.get('city')?.value,
       description: this.restaurantForm.get('description')?.value,
-      photos: this.restaurantForm.get('photos')?.value,
+      photos: [''],
       rating: this.restaurantForm.get('rating')?.value,
       creationDate: this.restaurantForm.get('creationDateRest')?.value,
       listTags: [{ 

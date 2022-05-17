@@ -27,7 +27,7 @@ export class RestaurantAddProfileComponent implements OnInit {
       address: ['', Validators.required],
       description: ['', Validators.required],
       city: ['', Validators.required],
-      photos: [{ }],
+      photos: [''],
       rating: [''],
       listTags: [{
         tagName: [''],
