@@ -23,11 +23,19 @@
                             </div>
                         </div>
                         <div class="mb-3">
+                            <input type="text" formControlName="city"
+                                class="form-control form-control-lg" placeholder="City">
+                            <div class="text-danger"
+                                *ngIf="restaurantForm.get('city')?.hasError('required') && restaurantForm.get('city')?.touched">
+                                <span>La ciutat és obligatoria</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
                             <input type="text" formControlName="address"
                                 class="form-control form-control-lg" placeholder="Address">
                             <div class="text-danger"
                                 *ngIf="restaurantForm.get('address')?.hasError('required') && restaurantForm.get('address')?.touched">
-                                <span>La relevance és obligatoria</span>
+                                <span>La adreça és obligatoria</span>
                             </div>
                         </div>
                         <div class="mb-3">

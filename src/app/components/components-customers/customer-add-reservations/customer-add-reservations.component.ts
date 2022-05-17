@@ -90,6 +90,7 @@ export class CustomerAddReservationsComponent implements OnInit {
       restaurantName: this.reservationForm.get('restaurantName')?.value,
       email: this.reservationForm.get('restemail')?.value,
       address: this.reservationForm.get('address')?.value,
+      city: this.reservationForm.get('city')?.value,
       description: this.reservationForm.get('description')?.value,
       photos: this.reservationForm.get('photos')?.value,
       rating: this.reservationForm.get('rating')?.value,

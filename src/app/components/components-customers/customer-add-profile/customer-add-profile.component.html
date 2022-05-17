@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="mb-3" *ngIf="customer?.fullName == null">
-                            <input type="text" formControlName="password"
+                            <input type="password" formControlName="password"
                                 class="form-control form-control-lg" placeholder="Password">
                             <div class="text-danger"
                                 *ngIf="customerForm.get('password')?.hasError('required') && customerForm.get('password')?.touched">

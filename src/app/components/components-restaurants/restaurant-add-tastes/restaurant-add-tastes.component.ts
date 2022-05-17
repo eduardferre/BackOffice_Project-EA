@@ -53,6 +53,7 @@ export class RestaurantAddTastesComponent implements OnInit {
       owner: this.restForm.get('owner')?.value,
       email: this.restForm.get('email')?.value,
       address: this.restForm.get('address')?.value,
+      city: this.restForm.get('city')?.value,
       description: this.restForm.get('description')?.value,
       photos: this.restForm.get('photos')?.value,
       rating: this.restForm.get('rating')?.value,

@@ -26,6 +26,7 @@ export class RestaurantAddProfileComponent implements OnInit {
       email: ['', Validators.required],
       address: ['', Validators.required],
       description: ['', Validators.required],
+      city: ['', Validators.required],
       photos: [{ }],
       rating: [''],
       listTags: [{
@@ -51,6 +52,7 @@ export class RestaurantAddProfileComponent implements OnInit {
       email: this.restForm.get('email')?.value,
       address: this.restForm.get('address')?.value,
       description: this.restForm.get('description')?.value,
+      city: this.restForm.get('city')?.value,
       photos: this.restForm.get('photos')?.value,
       rating: this.restForm.get('rating')?.value,
       listTags: this.restForm.get('listTags')?.value,
@@ -79,6 +81,7 @@ export class RestaurantAddProfileComponent implements OnInit {
           ownerName: data.owner.ownerName,
           email: data.email,
           address: data.address,
+          city: data.city,
           description: data.description,
           photos: data.photos,
           rating: data.rating,

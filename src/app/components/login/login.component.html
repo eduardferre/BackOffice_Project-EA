@@ -14,7 +14,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" formControlName="password"
+                            <input type="password" formControlName="password"
                                 class="form-control form-control-lg" placeholder="Password">
                             <div class="text-danger"
                                 *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
@@ -30,6 +30,8 @@
         </div>
     </div>
 </div>
+<!--
 <div class="container mt-5 text-center"> 
     <i [routerLink]="['/register']" class="fa-solid fa-pen-to-square text-primary"> Register </i>
 </div>
+-->
